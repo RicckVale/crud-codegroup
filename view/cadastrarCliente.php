@@ -1,6 +1,6 @@
 <?php
-
 ?>
+
 <form method="post" action="controller/inserirCliente.php">
 <div class="form-row">
     <div class="form-group col-md-12">
@@ -20,7 +20,7 @@
     </div>
     <div class="form-group col-md-4">
         <label for="inputEmail4">Telefone</label>
-        <input id="telefone" name="telefone" type="text" class="form-control" placeholder="11 965876681" onkeypress="$(this).mask('00 000000000');" require>
+        <input id="telefone" name="telefone" type="text" class="form-control" placeholder="00 00000000" onkeypress="$(this).mask('00 000000000');" require>
         <span class="text-muted" style="padding-left: 5px;"><small>Somente Números</small></span>
     </div>
 </div>

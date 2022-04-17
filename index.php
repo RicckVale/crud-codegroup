@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_GET['p'])){
     $p = $_GET['p'];
 }else{
@@ -40,7 +39,10 @@ if(isset($_GET['p'])){
                         </a>
                 </div>
                 <div class="col-9 corpo">
+
                     <?php 
+                    // Inclui a mensagem de Erro ou Sucesso.
+                    include_once("view/mensagemStatus.php");
                     // Inclui a pagina da View chamada pelo Menu
                     include_once("view/$p.php");
                     
@@ -57,6 +59,6 @@ if(isset($_GET['p'])){
 
     <script src="src/jquery-3.2.1.slim.min.js"></script>
     <script src="src/jquery.mask.min.js"></script>
-    <script src="src/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="src/popper.min.js"></script>
     <script src="src/bootstrap.min.js"></script>
 </body>
