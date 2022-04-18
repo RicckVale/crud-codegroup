@@ -93,11 +93,35 @@ class Cliente extends BD
 
 
     // Função que Lista o Cliente para criar a View
-    public function listarClientes($inicio)
+    public function listarClientes($inicio, $busca, $buscaColuna, $buscaValor)
     {
-        $c = $this->pdo->query("SELECT * FROM cliente LIMIT $inicio, 10");
+        // Faz a configuração da busca
+        // Caso não esteja fazendo uma busca exibe a lista normalmente
+        if($busca == 0){
+            $c = $this->pdo->query("SELECT * FROM cliente LIMIT $inicio, 10");
+            // Caso esteja fazendo uma busca faz a Query com Where.
+        }else if($busca == 1){
+            $c = $this->pdo->query("SELECT * FROM cliente WHERE $buscaColuna LIKE '%$buscaValor%' LIMIT $inicio, 10");
+        }
+        
         return $c->fetchAll();
     }
+    
+    // Função para retornar o total exibido na lista.
+    public function totalListaCliente($inicio, $busca, $buscaColuna, $buscaValor)
+    {
+       // Faz a configuração da busca
+        // Caso não esteja fazendo uma busca exibe a lista normalmente
+        if($busca == 0){
+            $c = $this->pdo->query("SELECT * FROM cliente LIMIT $inicio, 10");
+            // Caso esteja fazendo uma busca faz a Query com Where.
+        }else if($busca == 1){
+            $c = $this->pdo->query("SELECT * FROM cliente WHERE $buscaColuna LIKE '%$buscaValor%' LIMIT $inicio, 10");
+        }
+        
+        return $c->rowCount();
+    }
+    
 
     public function infosCliente ()
     {

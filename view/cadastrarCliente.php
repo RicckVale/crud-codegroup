@@ -11,7 +11,7 @@
 <div class="form-row">
     <div class="form-group col-md-4">
         <label for="inputEmail4">CPF</label>
-        <input id="cpf" name="cpf" type="text" class="form-control" placeholder="00000000000" onkeypress="$(this).mask('00000000000');" required>
+        <input id="cpf" name="cpf" type="text" class="form-control" placeholder="00000000000" onblur="$(this).mask('00000000000');" required>
         <span class="text-muted" style="padding-left: 5px;"><small>Somente Números</small></span>
     </div>
     <div class="form-group col-md-4">
@@ -20,7 +20,7 @@
     </div>
     <div class="form-group col-md-4">
         <label for="inputEmail4">Telefone</label>
-        <input id="telefone" name="telefone" type="text" class="form-control" placeholder="00 00000000" onkeypress="$(this).mask('00 000000000');" require>
+        <input id="telefone" name="telefone" type="text" class="form-control" placeholder="00 00000000" onblur="$(this).mask('00 000000000');" require>
         <span class="text-muted" style="padding-left: 5px;"><small>Somente Números</small></span>
     </div>
 </div>
@@ -29,7 +29,7 @@
 <div class="form-row">
     <div class="form-group col-md-3">
         <label for="inputEmail4">CEP</label>
-        <input id="cep" name="cep" type="text" class="form-control" placeholder="00000000" onblur="pesquisacep(this.value);" required>
+        <input id="cep" name="cep" type="text" class="form-control" placeholder="00000000" onblur="pesquisacep(this.value);" onkeyup="$(this).mask('000000000');" required>
         <span class="text-muted" style="padding-left: 5px;"><small>Somente Números</small></span>
     </div>
 </div>

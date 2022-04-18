@@ -6,19 +6,22 @@ class controllerListarCliente
 {
     private $cliente;
     public $page;
+    public $totalLista;
 
-    public function __construct($page)
+    public function __construct($page, $busca, $buscaColuna, $buscaValor)
     {
         $this->cliente = new App\Cliente;
-        $this->controllerFunction($page);
+        $this->controllerFunction($page, $busca, $buscaColuna, $buscaValor);
     }
-
-    public function controllerFunction($page)
+    public function controllerFunction($page, $busca, $buscaColuna, $buscaValor)
     {
         $page = limpaString($page);
         $page = $page * 10;
 
-        $clientes = $this->cliente->listarClientes($page);
+        $clientes = $this->cliente->listarClientes($page, $busca, $buscaColuna, $buscaValor);
+        $totalLista = $this->cliente->totalListaCliente($page, $busca, $buscaColuna, $buscaValor);
+
+        $this->totalLista = $totalLista;
 
         foreach ($clientes as $c) {
             
@@ -27,6 +30,7 @@ class controllerListarCliente
             <tr>
             <th scope="row">' . $c['nome'] . '</th>
             <td>' . $c['cpf'] . '</td>
+            <td>' . $c['telefone'] . '</td>
             <td>' . $c['email'] . '</td>
             <td>' . $c['cidade'] . '/' . $c['uf'] . '</td>
             <div class="dropdown">
@@ -45,4 +49,9 @@ class controllerListarCliente
 
         }
     }
+
+    public function getTotalLista(){
+      return $this->totalLista;
+    }
+    
 }
