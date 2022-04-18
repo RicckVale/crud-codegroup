@@ -2,11 +2,18 @@
 # </> CODEGROUP - TESTE
 ## Funcionalidades
 :heavy_check_mark: `Entidade Cliente:` Criar a Entidade Cliente (Nome, CPF, Email, Telefone, Endereço).
+
 :heavy_check_mark: `Criar Banco de Dados:` Criar Banco de Dados da Entidadade Cliente.
+
 :heavy_check_mark: `Criar Tela 1:` Listar Clientes, Buscar Clientes, Paginação 10/10.
+
 :heavy_check_mark: `Criar Tela 2:` Cadastrar Cliente.
+
 :heavy_check_mark: `Criar Tela 3:` Editar Cliente.
+
 :heavy_check_mark: `Opcional Tests:` Tests Deletar Cliente com PHPUnit.
+
+
 ###
 
 ## Ferramentas Utilizadas
