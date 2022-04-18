@@ -37,8 +37,10 @@ class Cliente extends BD
             $c->bindValue('uf', $this->uf, \PDO::PARAM_STR);
 
             $c->execute();
+            return true;
         } catch (\Exception $e) {
             throw new \Exception("$e");
+            return false;
         }
     }
 
@@ -62,8 +64,11 @@ class Cliente extends BD
             $c->bindValue('uf', $this->uf, \PDO::PARAM_STR);
 
             $c->execute();
+            return true;
         } catch (\Exception $e) {
             throw new \Exception("$e");
+            return false;
+
         }
     }
 
@@ -74,8 +79,13 @@ class Cliente extends BD
             $c = $this->pdo->prepare("DELETE FROM cliente WHERE id = :id");
             $c->bindValue('id', $this->id, \PDO::PARAM_STR);
             $c->execute();
+            
+            return true;
         } catch (\Exception $e) {
             throw new \Exception("$e");
+
+            return false;
+
         }
     }
 

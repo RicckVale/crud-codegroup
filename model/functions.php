@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 // Função para limpar Strings evitar que insiram códigos nas Querys.
 // E evita informação sujas no Banco de Dados
 function limpaString($string){

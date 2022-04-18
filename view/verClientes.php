@@ -27,7 +27,7 @@ $anteriorPagina = $page - 1;
         <option value="cpf">CPF</option>
         <option value="nome">Nome</option>
         <option value="cidade">Cidade</option>
-        <option value="estado">Estado</option>
+        <option value="uf">Estado</option>
       </select>
     </div>
     <div class="form-group col-md-3 text-right">

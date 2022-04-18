@@ -14,7 +14,7 @@ class controllerDeletaCliente
 
     function controllerFunction($id){
         $this->cliente->id = $id;
-        $this->cliente->deletaCliente();
+        $c = $this->cliente->deletaCliente();
         header("Location: ../index.php?p=verClientes&s=Cliente Deletado com Sucesso.");
     }
 }
