@@ -115,6 +115,24 @@ class controllerEditarCliente
         $this->cliente->cidade = limpaString($_POST['cidade']);
         $this->cliente->uf = limpaString($_POST['uf']);
 
+        // Verifica se alguns dados obrigatórios são Nullos
+        if($_POST['nome'] == ""){
+            header("Location: ../index.php?p=editarCliente&id=".$_POST['id']."&e=É obrigatório o preenchimento de um Nome!");
+            die;
+        }
+        if($_POST['email'] == ""){
+            header("Location: ../index.php?p=editarCliente&id=".$_POST['id']."&e=É obrigatório o preenchimento de um E-Mail!");
+            die;
+        }
+        if($_POST['cep'] == ""){
+            header("Location: ../index.php?p=editarCliente&id=".$_POST['id']."&e=É obrigatório o preenchimento de um CEP!");
+            die;
+        }
+        if($_POST['rua'] == ""){
+            header("Location: ../index.php?p=editarCliente&id=".$_POST['id']."&e=É obrigatório o preenchimento de um Rua!");
+            die;
+        }
+
         // Se o CPF não for cadastrado ele inclui o cliente na Base de Dados.
         $this->cliente->editarCliente();
         //Redireciona de volta para a página de cadastrado informando o cadastro.

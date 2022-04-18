@@ -39,7 +39,7 @@ class controllerListarCliente
               Ação
             </button>
             <div class="dropdown-menu" aria-labelledby="drop'.$c['id'].'">
-              <a class="dropdown-item" href="#">Visualizar</a>
+              <a class="dropdown-item" href="index.php?p=verCliente&id='.$c['id'].'">Visualizar</a>
               <a class="dropdown-item" href="index.php?p=editarCliente&id='.$c['id'].'">Editar</a>
               <a class="dropdown-item bg-danger text-white" href="controller/excluirCliente.php?id='.$c['id'].'">Deletar</a>
             </div>
